@@ -1,0 +1,23 @@
+{
+	"name": "C# (.NET)",
+	"image": "mcr.microsoft.com/devcontainers/dotnet:1-7.0-bullseye",
+	"mounts": [
+		"source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached",
+	],
+	"features": {
+		"ghcr.io/devcontainers/features/python:1": {},
+		"ghcr.io/jlaundry/devcontainer-features/azure-functions-core-tools:1": {}
+	},
+	"initializeCommand": "ls",
+	"postCreateCommand": "sudo apt-get update && sudo apt-get install xdg-utils -y",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-dotnettools.csdevkit",
+				"ms-vscode.powershell",
+				"ms-azuretools.vscode-azurefunctions",
+				"GitHub.copilot"
+			],
+		}
+	}
+}
